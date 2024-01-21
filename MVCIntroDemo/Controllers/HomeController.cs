@@ -17,6 +17,8 @@ namespace MVCIntroDemo.Controllers
         {
             _logger.LogInformation("Index page loaded");
 
+            _logger.LogDebug("This is debug message");
+
             ViewBag.Message = "Welcome to the MVC Intro Demo";
             
 
@@ -27,6 +29,14 @@ namespace MVCIntroDemo.Controllers
         {
             return View();
         }
+
+        public IActionResult About()
+        {
+            ViewBag.Message = "This is an ASP.NET Core MVC app.";
+
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
